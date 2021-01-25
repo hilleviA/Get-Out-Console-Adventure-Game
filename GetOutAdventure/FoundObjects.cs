@@ -236,5 +236,29 @@ namespace GetOutAdventure
                 return false;
             }
         }
-    }    
+        //Removes all the uses object from JSON-file 
+        public void ResetGame()
+        {
+            //Opens and deserializing JSON file to list of objects
+            string filePath = $"{AppDomain.CurrentDomain.BaseDirectory}\\UsedObjects.json";
+
+            if (File.Exists(filePath))
+            {
+                var json = File.ReadAllText(filePath);
+                List<FoundObjects> foundObjects = JsonConvert.DeserializeObject<List<FoundObjects>>(json);
+                //Removes all objects from list
+                foundObjects.Clear();
+
+                //Serializing list back to JSON and saves now empty file
+                json = JsonConvert.SerializeObject(foundObjects, Formatting.Indented);
+                File.WriteAllText(filePath, json);
+            }
+            else
+            {
+                WriteLine("ERROR: SOMEHTING WENT WRRONG.");
+            }
+        }
+    }   
+    
+
 }

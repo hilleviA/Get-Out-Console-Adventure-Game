@@ -11,6 +11,7 @@ namespace GetOutAdventure
 
         //Instansiating classes
         private static Rooms.Basement basement = new Rooms.Basement();
+        private static FoundObjects foundObjects = new FoundObjects();
 
         //The title of the game
         public void GameTitle()
@@ -34,6 +35,8 @@ namespace GetOutAdventure
         //The Start menu
         public void StartMenu()
         {
+            //Resets game by removing all objects in usedObjects.json and loading start menu
+            foundObjects.ResetGame(); 
             ForegroundColor = ConsoleColor.White;
             WriteLine(" Welcome...what do you wanna do? \n");
             WriteLine(" 1) Start Game...if you dare");
@@ -49,8 +52,7 @@ namespace GetOutAdventure
                 switch (menuChoice)
                 {
                     case "1":
-                        StartGame();
-                        
+                        StartGame(); 
                         break;
                     case "2":
                         AboutGame();

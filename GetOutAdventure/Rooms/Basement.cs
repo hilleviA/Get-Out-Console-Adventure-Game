@@ -219,6 +219,7 @@ namespace GetOutAdventure.Rooms
                             Clear();
                             WriteLine("\n Yeah, the door is now open, let´s se what's on the other side....");
                             ReadLine();
+                            foundObjects.DeleteObject("Keycard");
                             gameSettings.EndGame();
                         }
                         else
