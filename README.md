@@ -1,6 +1,8 @@
 # Get Out - Console Adventure Game
-Ett textbaserat äventyrspel
+A text based adventure game
 
-## ResetGame Funktion
-Ett extra tillägg som inte medtaget i rapporten är funktionen ResetGame som helt glömdes bort men är väsentlig för att att spelet ska fungera som det ska. 
-Det den gör är att den tömmer filen med använda föremål så att den är tom när spelet startas om. 
+## About
+The game is written in C# and .NET and runs in the console. 
+As a player you are presented a story wich takes place in a dark basement and your mission is to GET OUT of the basement by trying diffrent menu options. 
+If you choose right you will escape but if you don't...things might not turn out well...
+
